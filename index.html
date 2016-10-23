@@ -3,10 +3,73 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sandwich Maker</title>
+	<style>
+		body {
+			background-color: seagreen;
+		}
+	</style>
 </head>
 <body>
+	<fieldset>
+		<legend>Menu Du Nom</legend>
+		<div id="boxes">
+			<input type="checkbox" name="bread">Bread<br>
+			<input type="checkbox" name="cheese">Cheese<br>
+			<input type="checkbox" name="condiments">Condiments<br>
+			<input type="checkbox" name="meat">Meat<br>
+			<input type="checkbox" name="veggies">Veggies<br>
+		</div>
+		<div id="options">
+			<div id="bread">
+				<select>
+					<option value="white">White</option>
+					<option value="wheat">Wheat</option>
+					<option value="rye">Rye</option>
+					<option value="no-bread">None</option>
+				</select>
+			</div>
+			<div id="cheese">
+				<select>
+					<option value="american">American</option>
+					<option value="cheddar">Cheddar</option>
+					<option value="provolone">Provolone</option>
+					<option value="no-cheese">None</option>
+				</select>
+			</div>
+			<div id="condiments">
+				<select>
+					<option value="ketchup">Ketchup</option>
+					<option value="mustard">Mustard</option>
+					<option value="mayo">Mayo</option>
+					<option value="no-condiments">None</option>
+				</select>
+			</div>
+			<div id="meat">
+				<select>
+					<option value="turkey">Turkey</option>
+					<option value="bacon">Bacon</option>
+					<option value="salami">Salami</option>
+					<option value="no-meat">None</option>
+				</select>
+			</div>
+			<div id="veggies">
+				<select>
+					<option value="lettuce">Lettuce</option>
+					<option value="tomato">Tomato</option>
+					<option value="pickle">Pickle</option>
+					<option value="no-veggies">None</option>
+				</select>
+			</div>
+		</div>
+		<button id="makeSandwich">Make that Sandwich</button>
+	</fieldset>
+	<h1>Final Cost: $<span id="cost">0.00</span></h1>
 	<script type="text/javascript" src="javascripts/SandwichMaker.js"></script>
+	<script type="text/javascript" src="javascripts/Bread.js"></script>
+	<script type="text/javascript" src="javascripts/Cheese.js"></script>
+	<script type="text/javascript" src="javascripts/Condiments.js"></script>
 	<script type="text/javascript" src="javascripts/Meat.js"></script>
+	<script type="text/javascript" src="javascripts/Veggies.js"></script>
 	<script type="text/javascript" src="javascripts/DOMHandler.js"></script>
 </body>
 </html>
