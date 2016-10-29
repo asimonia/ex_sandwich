@@ -21,4 +21,4 @@ var SandwichMaker = (function(maker) {
   }
 
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});

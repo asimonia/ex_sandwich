@@ -3,7 +3,7 @@ console.log("Veggies up in here!");
 var SandwichMaker = (function(maker) {
 
   
-  var VeggiesPrices = {"white": 4.00, "wheat": 5.00, "rye": 6.00, "none": 0};
+  var VeggiesPrices = {"lettuce": 0.50, "tomato": 0.75, "pickle": 0.60, "none": 0};
 
   // Augment the original object with another method
   maker.addVeggies = function(choice) {
@@ -21,4 +21,4 @@ var SandwichMaker = (function(maker) {
   }
 
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});
