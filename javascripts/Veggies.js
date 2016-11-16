@@ -1,24 +1,19 @@
-console.log("Veggies up in here!");
+let VeggiesPrices = {"lettuce": 0.50, "tomato": 0.75, "pickle": 0.60, "none": 0};
 
-var SandwichMaker = (function(maker) {
+// Augment the original object with another method
+let addVeggies = function(choice) {
+  console.log('Choice', choice);
+  var output = 0;
+  var price = VeggiesPrices[choice];
+  console.log("Veggies price", price);
+  output += price;
+  return output;
+};
 
-  
-  var VeggiesPrices = {"lettuce": 0.50, "tomato": 0.75, "pickle": 0.60, "none": 0};
+// Get Veggies prices
+let getVeggiesPrice = function(choice) {
+	return VeggiesPrices[choice];
+};
 
-  // Augment the original object with another method
-  maker.addVeggies = function(choice) {
-    console.log('Choice', choice);
-    var output = 0;
-    var price = VeggiesPrices[choice];
-    console.log("Veggies price", price);
-    output += price;
-    return output;
-  };
 
-  // Get Veggies prices
-  maker.getVeggiesPrice = function(choice) {
-  	return VeggiesPrices[choice];
-  }
-
-  return maker;
-})(SandwichMaker || {});
+module.exports = {addVeggies, getVeggiesPrice};

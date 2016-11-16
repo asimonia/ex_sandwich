@@ -1,3 +1,11 @@
+let bread = require('./Bread');
+let cheese = require('./Cheese');
+let condiments = require('./Condiments');
+let meat = require('./Meat');
+let sandwichmaker = require('./sandwichmaker');
+let veggies = require('./Veggies');
+ 
+
 // Variable to hold the final price. Default to 0.
 var finalSandwichPrice = 0;
 
@@ -24,19 +32,16 @@ breadChooser.addEventListener("change", function(event) {
   selectedChecked = event.target.checked;
 
   // Determine the price of the topping chosen
-  var price = SandwichMaker.getBreadPrice(selectedTopping);
-  console.log("price", price);
-  console.log("topping", selectedTopping);
-  console.log("checked", selectedChecked);
+  var price = bread.getBreadPrice(selectedTopping);
 
-  // If checked, add the topping to the SandwichMaker to increase the total price
+  // If checked, add the topping to the sandwichmaker to increase the total price
   if (selectedChecked) {
-    SandwichMaker.addTopping(price);
+    sandwichmaker.addTopping(price);
   }
 
-  // If unchecked, subtract the topping to the SandwichMaker to decrease the total price
+  // If unchecked, subtract the topping to the sandwichmaker to decrease the total price
   if (!selectedChecked) {
-  	SandwichMaker.removeTopping(price);
+  	sandwichmaker.removeTopping(price);
   }
 });
 
@@ -46,19 +51,17 @@ cheeseChooser.addEventListener("change", function(event) {
   selectedChecked = event.target.checked;
 
   // Determine the price of the topping chosen
-  var price = SandwichMaker.getCheesePrice(selectedTopping);
-  console.log("price", price);
-  console.log("topping", selectedTopping);
-  console.log("checked", selectedChecked);
+  var price = cheese.getCheesePrice(selectedTopping);
 
-  // If checked, add the topping to the SandwichMaker to increase the total price
+
+  // If checked, add the topping to the sandwichmaker to increase the total price
   if (selectedChecked) {
-    SandwichMaker.addTopping(price);
+    sandwichmaker.addTopping(price);
   }
 
-  // If unchecked, subtract the topping to the SandwichMaker to decrease the total price
+  // If unchecked, subtract the topping to the sandwichmaker to decrease the total price
   if (!selectedChecked) {
-  	SandwichMaker.removeTopping(price);
+  	sandwichmaker.removeTopping(price);
   }
 });
 
@@ -68,19 +71,17 @@ condimentsChooser.addEventListener("change", function(event) {
   selectedChecked = event.target.checked;
 
   // Determine the price of the topping chosen
-  var price = SandwichMaker.getCondimentsPrice(selectedTopping);
-  console.log("price", price);
-  console.log("topping", selectedTopping);
-  console.log("checked", selectedChecked);
+  var price = condiments.getCondimentsPrice(selectedTopping);
 
-  // If checked, add the topping to the SandwichMaker to increase the total price
+
+  // If checked, add the topping to the sandwichmaker to increase the total price
   if (selectedChecked) {
-    SandwichMaker.addTopping(price);
+    sandwichmaker.addTopping(price);
   }
 
-  // If unchecked, subtract the topping to the SandwichMaker to decrease the total price
+  // If unchecked, subtract the topping to the sandwichmaker to decrease the total price
   if (!selectedChecked) {
-  	SandwichMaker.removeTopping(price);
+  	sandwichmaker.removeTopping(price);
   }
 });
 
@@ -90,19 +91,19 @@ meatChooser.addEventListener("change", function(event) {
   selectedChecked = event.target.checked;
 
   // Determine the price of the topping chosen
-  var price = SandwichMaker.getMeatPrice(selectedTopping);
+  var price = meat.getMeatPrice(selectedTopping);
   console.log("price", price);
   console.log("topping", selectedTopping);
   console.log("checked", selectedChecked);
 
-  // If checked, add the topping to the SandwichMaker to increase the total price
+  // If checked, add the topping to the sandwichmaker to increase the total price
   if (selectedChecked) {
-    SandwichMaker.addTopping(price);
+    sandwichmaker.addTopping(price);
   }
 
-  // If unchecked, subtract the topping to the SandwichMaker to decrease the total price
+  // If unchecked, subtract the topping to the sandwichmaker to decrease the total price
   if (!selectedChecked) {
-  	SandwichMaker.removeTopping(price);
+  	sandwichmaker.removeTopping(price);
   }
 });
 
@@ -112,26 +113,23 @@ veggiesChooser.addEventListener("change", function(event) {
   selectedChecked = event.target.checked;
 
   // Determine the price of the topping chosen
-  var price = SandwichMaker.getVeggiesPrice(selectedTopping);
-  console.log("price", price);
-  console.log("topping", selectedTopping);
-  console.log("checked", selectedChecked);
+  var price = veggies.getVeggiesPrice(selectedTopping);
 
-  // If checked, add the topping to the SandwichMaker to increase the total price
+  // If checked, add the topping to the sandwichmaker to increase the total price
   if (selectedChecked) {
-    SandwichMaker.addTopping(price);
+    sandwichmaker.addTopping(price);
   }
 
-  // If unchecked, subtract the topping to the SandwichMaker to decrease the total price
+  // If unchecked, subtract the topping to the sandwichmaker to decrease the total price
   if (!selectedChecked) {
-  	SandwichMaker.removeTopping(price);
+  	sandwichmaker.removeTopping(price);
   }
 });
 
 
 makeSandwich.addEventListener("click", function() {
 	// Calculate the final sandwich price
-	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	finalSandwichPrice = sandwichmaker.getTotalPrice();
 	document.getElementById("cost").innerHTML = finalSandwichPrice.toFixed(2);
 
 });

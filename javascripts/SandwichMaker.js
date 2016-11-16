@@ -1,16 +1,17 @@
-var SandwichMaker = (function() {
+let totalPrice = 0;
 
-  var totalPrice = 0;
 
-  return {
-    addTopping: function(toppingPrice) {
-    	totalPrice += toppingPrice;
-    },
-    removeTopping: function(toppingPrice) {
-    	totalPrice -= toppingPrice;
-    },
-    getTotalPrice: function() {
-    	return totalPrice;
-    }
-  };
-})();
+let addTopping = function(toppingPrice) {
+  	totalPrice += toppingPrice;
+};
+
+let removeTopping = function(toppingPrice) {
+  	totalPrice -= toppingPrice;
+};
+
+let getTotalPrice = function() {
+  	return totalPrice;
+};
+
+
+module.exports = {addTopping, removeTopping, getTotalPrice};
